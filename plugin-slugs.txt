@@ -1,0 +1,17 @@
+custom-post-type-ui
+duplicate-post
+post-types-order
+regenerate-thumbnails
+wordpress-seo
+wp-migrate-db
+cookie-notice
+fast-velocity-minify
+w3-total-cache
+wp-smushit
+easy-wp-smtp
+better-wp-security
+clean-image-filenames
+loco-translate
+woocommerce
+ti-woocommerce-wishlist
+insta-flow

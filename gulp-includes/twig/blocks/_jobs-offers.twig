@@ -1,0 +1,15 @@
+<section class="jobs-offers-bloc">
+    <div class="wrapper">
+        <h3 class="title-1 blue-polygon">
+            <span>Offres en alternance disponibles</span>
+        </h3>
+        <div class="jobs">
+            {% for i in 1..4 %}
+                {% include '../components/_job.twig' %}
+            {% endfor %}
+        </div>
+        <a class="btn" href="#" title="Voir toutes les offres d'emploi">
+            <span class="txt">Toutes les offres d'emploi</span>
+        </a>
+    </div>
+</section>
