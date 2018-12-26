@@ -63,7 +63,7 @@ public_html/wp-content/upgrade/
 public_html/wp-content/index.php
 public_html/wp-content/plugins/index.php
 public_html/wp-content/themes/*
-!public_html/wp-content/themes/wp-athena/
+!public_html/wp-content/themes/storefront/
 public_html/*.php
 public_html/wp-includes
 public_html/wp-admin
