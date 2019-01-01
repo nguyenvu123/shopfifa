@@ -4,6 +4,7 @@ define('DOMAIN', 'wp_athena');
 /**
  * Themes Option
 **/
+define('ITEM_PRODUCT_HOME', 'item_product_home');
 define('AT_LOGO', 'at_logo');
 /**
  * Image Size
