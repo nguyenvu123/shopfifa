@@ -200,4 +200,17 @@
         $('.video-mo-01').children('iframe')[0].src = srcOld; 
         $('.video-mo-01').css('opacity','0');
     });
+ $('.block2-btn-addcart').each(function(){
+            var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+            $(this).on('click', function(){
+                swal(nameProduct, "is added to cart !", "success");  
+            });
+        });
+   $('.block2-btn-addwishlist').each(function(){
+            var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+            $(this).on('click', function(){
+                swal(nameProduct, "is added to wishlist !", "success");
+            });
+        });
+    $('.parallax100').parallax100();
 })(jQuery);
