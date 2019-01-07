@@ -1,4 +1,4 @@
-<?php /* Template Name: Trang chủ
+<?php /* Template Name: Home
 */ 
 ?>
 

@@ -35,11 +35,9 @@
             $("#myBtn").css('display','none');
         }
     });
-
-    $('#myBtn').on("click", function(){
-        $('html, body').animate({scrollTop: 0}, 300);
+    $(document).on('click', '.btn-back-to-top', function() { 
+        $('html, body').animate({scrollTop: 0}, 700);
     });
-
 
     /*[ Show header dropdown ]
     ===========================================================*/

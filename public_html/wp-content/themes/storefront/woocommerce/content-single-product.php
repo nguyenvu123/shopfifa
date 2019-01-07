@@ -22,6 +22,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @hooked wc_print_notices - 10
  */
+
 do_action( 'woocommerce_before_single_product' );
 
 if ( post_password_required() ) {
@@ -29,6 +30,8 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
+<div class="container">
+	
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class(); ?>>
 
 	<?php
@@ -69,6 +72,7 @@ if ( post_password_required() ) {
 		 */
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
+</div>
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

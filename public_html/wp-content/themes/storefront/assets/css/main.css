@@ -2330,6 +2330,37 @@ body {padding-right: 0px !important;}
   cursor: pointer;
   opacity: 1;
 }
+ .content-area {
+      width: 100%;
+ }
+ .woocommerce-checkout .col-1{
+  max-width: 100%;
+ }
+.woocommerce-checkout #customer_details #billing_last_name_field{
+  float: left;
+}
+.woocommerce-checkout #customer_details .form-row{
+  margin-bottom: 10px;
+}
+ .woocommerce-checkout #customer_details .col-2{
+  display: none;
+ }
+.woocommerce-order .woocommerce-customer-details{
+  display: none;
+}
+.wrap_header{
+  z-index: 1;
+}
+.cart-contents{
+  z-index: 2;
+}
+.current_page_item{
+  text-decoration: underline;
+}
+.woocommerce-billing-fields__field-wrapper .form-row{
+  display: flex;
+  align-items: center;
+}
 
 
 /*[ Input NumProduct ]

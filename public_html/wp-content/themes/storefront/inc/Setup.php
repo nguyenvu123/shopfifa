@@ -8,9 +8,9 @@ function athena_scripts() {
     // wp_enqueue_style( 'main-style', ASSETS_PATH.'css/main.css', array(), null );
 
     // Scripts
-    wp_enqueue_script( 'main-script', ASSETS_PATH.'js/main.js', array('jquery'), null, true );
+    wp_enqueue_script( 'main-script', ASSETS_PATH.'js/js/main.js', array('jquery'), null, true );
 
-    wp_localize_script( 'main-script', 'wp_localize',
+    wp_localize_script( 'main-script1', 'wp_localize',
         array(
             'ajaxurl' => admin_url( 'admin-ajax.php' ),
             'homeurl' => get_home_url()
