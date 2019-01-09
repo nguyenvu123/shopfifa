@@ -25,31 +25,42 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 <li <?php wc_product_class(); ?>>
-	<?php
-	
-	do_action( 'woocommerce_before_shop_loop_item_title' );
+	<?php $image = get_the_post_thumbnail_url($post->ID, ITEM_PRODUCT_HOME); ?>
+	<div class="block2">
+		<div class="block2-img wrap-pic-w of-hidden pos-relative">
+			<img src=" <?= $image?> " alt="IMG-PRODUCT">
 
-	/**
-	 * Hook: woocommerce_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_product_title - 10
-	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
+			<div class="block2-overlay trans-0-4">
+				<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+					<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+					<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+				</a>
 
-	/**
-	 * Hook: woocommerce_after_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_rating - 5
-	 * @hooked woocommerce_template_loop_price - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item_title' );
+				<div class="block2-btn-addcart w-size1 trans-0-4">
+					<a href="" class="flex-c-m size1 bo-rad-23s-text1 trans-0-4"><?php echo do_shortcode( "[ajax_add_to_cart id='$post->ID' text='Mua ngay!']" );
+					 ?></a>
+				</div>
+			</div>
+		</div>
 
-	/**
-	 * Hook: woocommerce_after_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_close - 5
-	 * @hooked woocommerce_template_loop_add_to_cart - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item' );
-	?>
+		<div class="block2-txt p-t-20">
+			<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+				<?= $product->name ?>
+			</a>
+			<p><?=$post->post_excerpt ?></p>
+			<?php if ( $product->is_on_sale() ) { ?>
+			<span class="block2-oldprice m-text7 p-r-5">
+				<?= number_format($product->get_regular_price()); ?> đ
+			</span>
+
+			<span class="block2-newprice m-text8 p-r-5">
+				<?= number_format($product->get_sale_price()); ?> đ
+			</span>
+			<?php } else{?>
+				<span class="block2-newprice m-text8 p-r-5">
+				<?= number_format($product->get_regular_price()) ?> đ
+			</span>
+			<?php } ?>
+		</div>
+	</div>
 </li>

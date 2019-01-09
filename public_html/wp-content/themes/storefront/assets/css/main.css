@@ -2361,8 +2361,16 @@ body {padding-right: 0px !important;}
   display: flex;
   align-items: center;
 }
-
-
+.include-shop .block2 img{
+  margin-bottom: 0 !important;
+}
+.include-shop .block2 li{
+  text-align: left;
+}
+.woocommerce-ordering select {
+  height: 35px;
+  padding-left: 11px;
+}
 /*[ Input NumProduct ]
 ///////////////////////////////////////////////////////////
 */

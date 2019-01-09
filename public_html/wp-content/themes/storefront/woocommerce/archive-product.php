@@ -29,7 +29,12 @@ get_header( 'shop' );
 do_action( 'woocommerce_before_main_content' );
 
 ?>
-<div class="container">
+<div class="container include-shop">
+	<?php
+
+	dynamic_sidebar( 1); 
+
+	?>
 <?php
 if ( woocommerce_product_loop() ) {
 
