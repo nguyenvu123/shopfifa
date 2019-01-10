@@ -184,12 +184,8 @@
             					$getProductDetail = wc_get_product( $values['product_id'] );
             					$image = get_the_post_thumbnail_url($values['product_id'], ITEM_PRODUCT_MINICART);
             					$quantity = $values['quantity'];
-            					$price = get_post_meta($values['product_id'] , '_price', true);
-            					
-            					
+            					$price = get_post_meta($values['product_id'] , '_price', true);	
      						?>
-
-
 
 								<li class="header-cart-item">
 									<div class="header-cart-item-img">
@@ -207,11 +203,7 @@
 									</div>
 								</li>
 							<?php } ?>
-							
-
-
-							
-
+						
 							</ul>
 
 							<div class="header-cart-total">
@@ -283,9 +275,6 @@
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
 							<ul class="header-cart-wrapitem">
-							
-
-								
 								<?php global $woocommerce;
     							$items = $woocommerce->cart->get_cart();
     							foreach($items as $item => $values) { 
@@ -361,4 +350,5 @@
             ?>
 			</nav>
 		</div>
+		<?php global $product; ?>
 	</header>
