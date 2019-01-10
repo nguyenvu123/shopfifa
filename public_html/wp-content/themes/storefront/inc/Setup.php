@@ -32,6 +32,7 @@ function athena_setup(){
     add_theme_support( 'post-thumbnails' );
     add_post_type_support( 'page', 'excerpt' );
     add_image_size(ITEM_PRODUCT_HOME,270,360,TRUE);
+     add_image_size(ITEM_PRODUCT_MINICART,320,320,TRUE);
     
    
 }
@@ -164,3 +165,18 @@ if (!function_exists('loop_columns')) {
         ) );
     }
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10, 0 ); 
+
+//up date cart count
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+    global $woocommerce;
+
+    ob_start();
+
+    ?>
+    <span class="header-icons-noti" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo  $woocommerce->cart->cart_contents_count; ?></span>
+    <?php
+    $fragments['span.header-icons-noti'] = ob_get_clean();
+    return $fragments;
+}
