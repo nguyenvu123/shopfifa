@@ -30,17 +30,14 @@ do_action( 'woocommerce_before_main_content' );
 
 ?>
 <div class="container include-shop">
-	<?php
 
-	dynamic_sidebar( 1); 
+	<?php 
 
+		dynamic_sidebar( 1); 
+		do_action( 'woocommerce_before_shop_loop' );
 	?>
 <?php
 if ( woocommerce_product_loop() ) {
-
-	
-	do_action( 'woocommerce_before_shop_loop' );
-
 	woocommerce_product_loop_start();
 
 	if ( wc_get_loop_prop( 'total' ) ) {

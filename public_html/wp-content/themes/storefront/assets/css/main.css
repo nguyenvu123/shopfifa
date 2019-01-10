@@ -2354,8 +2354,8 @@ body {padding-right: 0px !important;}
 .cart-contents{
   z-index: 2;
 }
-.current_page_item{
-  text-decoration: underline;
+.current_page_item a{
+  border-bottom: 1px solid #333333 !important;
 }
 .woocommerce-billing-fields__field-wrapper .form-row{
   display: flex;
