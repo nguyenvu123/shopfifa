@@ -11,16 +11,17 @@
 <body class="animsition <?php body_class(); ?>">
 	<?php 
 		$user = wp_get_current_user();
+		global $woocommerce;
 	?>
 	<!-- header fixed -->
 	<div class="wrap_header fixed-header2 trans-0-4">
 		<!-- Logo -->
 		<a href="index.html" class="logo">
-			<img src="<?= get_field("logo","option") ?>" alt="IMG-LOGO">
+			<img src="images/icons/logo.png" alt="IMG-LOGO">
 		</a>
 
 		<!-- Menu -->
-		<div class="wrap_menu"> 
+		<div class="wrap_menu">
 			<nav class="menu">
 				<ul class="main_menu">
 					<li>
@@ -61,37 +62,66 @@
 
 		<!-- Header Icon -->
 		<div class="header-icons">
-			<a href="#" class="header-wrapicon1 dis-block">
-				<img src="<?=get_field("avata","option")  ?>" class="header-icon1" alt="ICON">
+			<a href="/my-account" class="header-wrapicon1 dis-block">
+				<img src="<?= get_field("avata","option") ?>" class="header-icon1" alt="ICON">
 			</a>
 
 			<span class="linedivide1"></span>
 
-			<div>
-			<?php  
+			<div class="header-wrapicon2">
+				<img src="<?= get_field("cat_image","option") ?>" class="header-icon1 js-show-header-dropdown" alt="ICON">
+				<span class="header-icons-noti">0</span>
 
-			if ( storefront_is_woocommerce_activated() ) {
-				if ( is_cart() ) {
-					$class = 'current-menu-item';
-				} else {
-					$class = '';
-				}
-			?>
-				<ul id="site-header-cart" class="site-header-cart menu">
-					<li class="<?php echo esc_attr( $class ); ?>">
-						<?php storefront_cart_link(); ?>
-					</li>
-					<li>
-						<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
-					</li>
-				</ul>
-				<?php } ?>
+				<!-- Header cart noti -->
+				<div class="header-cart header-dropdown">
+					<ul class="header-cart-wrapitem">
+						<li class="header-cart-item">
+							<div class="header-cart-item-img">
+								<img src="images/item-cart-01.jpg" alt="IMG">
+							</div>
+
+							<div class="header-cart-item-txt">
+								<a href="#" class="header-cart-item-name">
+									White Shirt With Pleat Detail Back 111
+								</a>
+
+								<span class="header-cart-item-info">
+									1 x $19.00
+								</span>
+							</div>
+						</li>
+
+					
+
+						
+					</ul>
+
+					<div class="header-cart-total">
+						Total: $75.00
+					</div>
+
+					<div class="header-cart-buttons">
+						<div class="header-cart-wrapbtn">
+							<!-- Button -->
+							<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+								View Cart
+							</a>
+						</div>
+
+						<div class="header-cart-wrapbtn">
+							<!-- Button -->
+							<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+								Check Out
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- top noti -->
-	<div class="flex-c-m size22 bg0 s-text21 pos-relative">
+		<div class="flex-c-m size22 bg0 s-text21 pos-relative">
 		<?= get_field("title-sale-of","option"); ?>
 		<a href="<?= get_field("link_shop","option"); ?>" class="s-text22 hov6 p-l-5">
 			<?=get_field("title-banner-sale","option") ?>
@@ -118,7 +148,7 @@
 				</a>
 
 				<div class="topbar-child2">
-					<span class="topbar-email">
+						<span class="topbar-email">
 						<?php if($user->user_email){ ?>
 						
 						   <a href="/my-account"><?=$user->user_login ?></a>
@@ -130,6 +160,9 @@
 						<?php } ?>
 						
 					</span>
+
+					
+
 					<!--  -->
 					<a href="/my-account" class="header-wrapicon1 dis-block m-l-30">
 						<img src="<?= get_field("avata","option") ?>" class="header-icon1" alt="ICON">
@@ -137,29 +170,71 @@
 
 					<span class="linedivide1"></span>
 
-		
-						<div class="header-right2">
-							<div class="cart box_1">
-								<?php  
+					<div class="header-wrapicon2 m-r-13">
+						<img src="<?= get_field("cat_image","option") ?>" class="header-icon1 js-show-header-dropdown" alt="ICON">
+						<span id="count-cart-items" class="header-icons-noti"></span>
 
-								if ( storefront_is_woocommerce_activated() ) {
-									if ( is_cart() ) {
-										$class = 'current-menu-item';
-									} else {
-										$class = '';
-									}
-								?>
-						<ul id="site-header-cart" class="site-header-cart menu">
-							<li class="<?php echo esc_attr( $class ); ?>">
-								<?php storefront_cart_link(); ?>
-							</li>
-							<li>
-								<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
-							</li>
-						</ul>
-						<?php } ?>
+						<!-- Header cart noti -->
+						<div class="header-cart header-dropdown">
+							<ul class="header-cart-wrapitem">
+							<?php global $woocommerce;
+    							$items = $woocommerce->cart->get_cart();
+    							foreach($items as $item => $values) { 
+            					$_product =  wc_get_product( $values['data']->get_id()); 
+            					$getProductDetail = wc_get_product( $values['product_id'] );
+            					$image = get_the_post_thumbnail_url($values['product_id'], ITEM_PRODUCT_MINICART);
+            					$quantity = $values['quantity'];
+            					$price = get_post_meta($values['product_id'] , '_price', true);
+            					
+            					
+     						?>
+
+
+
+								<li class="header-cart-item">
+									<div class="header-cart-item-img">
+										<img src="<?=$image ?>" alt="IMG">
+									</div>
+
+									<div class="header-cart-item-txt">
+										<a href="<?= get_permalink() ?>" class="header-cart-item-name">
+											<?= $_product->get_title() ?>
+										</a>
+
+										<span class="header-cart-item-info">
+											<?=$quantity ?> x <?= $price ?>đ
+										</span>
+									</div>
+								</li>
+							<?php } ?>
+							
+
+
+							
+
+							</ul>
+
+							<div class="header-cart-total">
+								Total: <?=$woocommerce->cart->get_cart_total();?>
+							</div>
+
+							<div class="header-cart-buttons">
+								<div class="header-cart-wrapbtn">
+									<!-- Button -->
+									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										View Cart
+									</a>
+								</div>
+
+								<div class="header-cart-wrapbtn">
+									<!-- Button -->
+									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										Check Out
+									</a>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
 				</div>
 			</div>
 
@@ -168,12 +243,12 @@
 				<!-- Menu -->
 				<div class="wrap_menu">
 					<nav class="menu">
-					 <?php 
-                wp_nav_menu( array(
-                    'menu' =>'main_menu',
-                    'menu_class'=> 'main_menu',
-                ) )
-            ?>
+					<?php 
+                	wp_nav_menu( array(
+                    	'menu' =>'main_menu',
+                    	'menu_class'=> 'main_menu',
+                		) )
+            		?>
 					</nav>
 				</div>
 
@@ -185,11 +260,10 @@
 		</div>
 
 		<!-- Header Mobile -->
-
 		<div class="wrap_header_mobile">
 			<!-- Logo moblie -->
 			<a href="index.html" class="logo-mobile">
-				<img src="/wp-content/themes/storefront/assets/images/icons/logo.png" alt="IMG-LOGO">
+				<img src="<?= get_field("logo","option") ?>" alt="IMG-LOGO">
 			</a>
 
 			<!-- Button show menu -->
@@ -197,40 +271,58 @@
 				<!-- Header Icon mobile -->
 				<div class="header-icons-mobile">
 					<a href="/my-account" class="header-wrapicon1 dis-block">
-						<img src="wp-content/themes/storefront/assets/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+						<img src="<?= get_field("avata","option") ?>" class="header-icon1" alt="ICON">
 					</a>
 
 					<span class="linedivide2"></span>
 
 					<div class="header-wrapicon2">
-						<img src="wp-content/themes/storefront/assets/images//icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+						<img src="<?= get_field("cat_image","option") ?>" class="header-icon1 js-show-header-dropdown" alt="ICON">
+						<span class="header-icons-noti">0</span>
 
 						<!-- Header cart noti -->
-						
 						<div class="header-cart header-dropdown">
+							<ul class="header-cart-wrapitem">
 							
 
-							
+								
+								<?php global $woocommerce;
+    							$items = $woocommerce->cart->get_cart();
+    							foreach($items as $item => $values) { 
+            					$_product =  wc_get_product( $values['data']->get_id()); 
+            					$getProductDetail = wc_get_product( $values['product_id'] );
+            					$image = get_the_post_thumbnail_url($values['product_id'], ITEM_PRODUCT_MINICART);
+            					$quantity = $values['quantity'];
+            					$price = get_post_meta($values['product_id'] , '_price', true);
+            					
+            					
+     							?>
+								<li class="header-cart-item">
+									<div class="header-cart-item-img">
+										<img src="<?=$image  ?>" alt="IMG">
+									</div>
 
-							<?php  
+									<div class="header-cart-item-txt">
+										<a href="<?= get_permalink() ?>" class="header-cart-item-name">
+											<?= $_product->get_title() ?>
+										</a>
 
-								if ( storefront_is_woocommerce_activated() ) {
-									if ( is_cart() ) {
-										$class = 'current-menu-item';
-									} else {
-										$class = '';
-									}
-								?>
-						<ul id="site-header-cart" class="header-cart-wrapitem">
-							<li class="header-cart-item">
-								<?php storefront_cart_link(); ?>
-							</li>
-							<li>
-								<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
-							</li>
-						</ul>
-						<?php } ?>
+										<span class="header-cart-item-info">
+											<?=$quantity ?> x <?= $price ?>đ
+										</span>
+									</div>
+								</li>
+
+
+								<?php } ?>
+
+
+							</ul>
+
+							<div class="header-cart-total">
+								Total: <?=$woocommerce->cart->get_cart_total();?>
+							</div>
+
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
@@ -259,17 +351,14 @@
 		</div>
 
 		<!-- Menu Mobile -->
-				
 		<div class="wrap-side-menu" >
 			<nav class="side-menu">
-			 <?php 
+				<?php 
                 wp_nav_menu( array(
                     'menu' =>'main_menu',
                     'menu_class'=> 'main-menu',
                 ) )
             ?>
-
-					
-			
-		<?php global $product; ?>
+			</nav>
+		</div>
 	</header>

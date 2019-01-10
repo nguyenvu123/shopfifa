@@ -2364,12 +2364,15 @@ body {padding-right: 0px !important;}
 .include-shop .block2 img{
   margin-bottom: 0 !important;
 }
-.include-shop .block2 li{
+.include-shop .block2 li{ 
   text-align: left;
 }
 .woocommerce-ordering select {
   height: 35px;
   padding-left: 11px;
+}
+.wrap-side-menu .side-menu .menu-item {
+  background: #e65540;
 }
 /*[ Input NumProduct ]
 ///////////////////////////////////////////////////////////
