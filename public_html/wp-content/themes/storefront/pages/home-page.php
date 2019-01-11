@@ -117,7 +117,7 @@
 
 									<div class="block2-txt p-t-20">
 										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<?= $product->name ?>
+											<?= $post->post_title ?>
 										</a>
 										<p><?=$post->post_excerpt ?></p>
 										<?php if ( $product->is_on_sale() ) { ?>
@@ -180,7 +180,7 @@
 
 									<div class="block2-txt p-t-20">
 										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<?=$product->name; ?>
+											<?= $post->post_title ?>
 										</a>
 
 										<span class="block2-price m-text6 p-r-5">

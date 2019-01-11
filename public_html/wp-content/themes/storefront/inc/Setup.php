@@ -2,7 +2,6 @@
 /**
  * Enqueue scripts and styles.
 **/
-define('APP_PATH',dirname(__FILE__));
 function athena_scripts() {
     // Styles
     // wp_enqueue_style( 'main-style', ASSETS_PATH.'css/main.css', array(), null );
@@ -165,6 +164,93 @@ if (!function_exists('loop_columns')) {
         ) );
     }
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10, 0 ); 
+
+
+if( !function_exists('tvlgiao_wpdance_is_woocommerce') ){
+    function tvlgiao_wpdance_is_woocommerce(){
+        $_actived = apply_filters( 'active_plugins', get_option( 'active_plugins' )  );
+        if ( !in_array( "woocommerce/woocommerce.php", $_actived ) ) {
+            return false;
+        }
+        return true;
+    }
+}
+
+
+//action cart
+add_action( 'tvlgiao_wpdance_header_init_action', 'tvlgiao_wpdance_header_init', 5 );
+if(!function_exists ('tvlgiao_wpdance_header_init')){
+    function tvlgiao_wpdance_header_init(){
+
+    //var_dump(TVLGIAO_THEME_CUSTOMIZE. "custom-cart.php");die();
+        require_once TVLGIAO_THEME_CUSTOMIZE. "mini-cart.php";
+    }   
+}
+
+
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment_mini' );
+
+     function woocommerce_header_add_to_cart_fragment_mini($fragments) {
+
+    ob_start();
+    ?>
+
+  <div class="header-cart header-dropdown">
+        <?php 
+        global $woocommerce;
+                $items = $woocommerce->cart->get_cart();
+                foreach($items as $item => $values) { 
+                $_product =  wc_get_product( $values['data']->get_id()); 
+                $getProductDetail = wc_get_product( $values['product_id'] );
+                $image = get_the_post_thumbnail_url($values['product_id'], ITEM_PRODUCT_MINICART);
+                $quantity = $values['quantity'];
+                $price = get_post_meta($values['product_id'] , '_price', true); 
+                ?>
+                 <ul class="header-cart-wrapitem">
+                <li class="header-cart-item 55555">
+                    <div class="header-cart-item-img">
+                        <img src="<?=$image ?>" alt="IMG">
+                    </div>
+
+                    <div class="header-cart-item-txt">
+                        <a href="<?= get_permalink() ?>" class="header-cart-item-name">
+                            <?= $_product->get_title() ?>
+                        </a>
+
+                        <span class="header-cart-item-info">
+                            <?=$quantity ?> x <?= $price ?>đ
+                        </span>
+                    </div>
+                </li>
+            </ul>
+            <?php } ?>
+            <div class="header-cart-total">
+                Total: <?=$woocommerce->cart->get_cart_total();?>
+            </div>
+
+            <div class="header-cart-buttons">
+                <div class="header-cart-wrapbtn">
+                    <!-- Button -->
+                    <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                        View Cart
+                    </a>
+                </div>
+
+                <div class="header-cart-wrapbtn">
+                    <!-- Button -->
+                    <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                        Check Out
+                    </a>
+                </div>
+            </div>
+        </div>
+   
+    <?php $fragments['div.header-cart'] = ob_get_clean();
+
+    return $fragments;
+
+} 
+
 
 //up date cart count
 add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );

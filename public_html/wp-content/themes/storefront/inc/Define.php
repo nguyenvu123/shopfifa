@@ -1,6 +1,8 @@
 <?php
 define('ASSETS_PATH', get_template_directory_uri().'/assets/');
 define('DOMAIN', 'wp_athena');
+define('TVLGIAO_THEME_CUSTOMIZE', get_template_directory() . '/customize/');
+
 /**
  * Themes Option
 **/

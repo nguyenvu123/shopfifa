@@ -170,63 +170,15 @@
 
 					<span class="linedivide1"></span>
 
-					<div class="header-wrapicon2 m-r-13">
-						<img src="<?= get_field("cat_image","option") ?>" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span id="count-cart-items" class="header-icons-noti"></span>
 
-						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-							<?php global $woocommerce;
-    							$items = $woocommerce->cart->get_cart();
-    							foreach($items as $item => $values) { 
-            					$_product =  wc_get_product( $values['data']->get_id()); 
-            					$getProductDetail = wc_get_product( $values['product_id'] );
-            					$image = get_the_post_thumbnail_url($values['product_id'], ITEM_PRODUCT_MINICART);
-            					$quantity = $values['quantity'];
-            					$price = get_post_meta($values['product_id'] , '_price', true);	
-     						?>
 
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="<?=$image ?>" alt="IMG">
-									</div>
+					<?php do_action('tvlgiao_wpdance_header_init_action');  ?>
 
-									<div class="header-cart-item-txt">
-										<a href="<?= get_permalink() ?>" class="header-cart-item-name">
-											<?= $_product->get_title() ?>
-										</a>
 
-										<span class="header-cart-item-info">
-											<?=$quantity ?> x <?= $price ?>đ
-										</span>
-									</div>
-								</li>
-							<?php } ?>
-						
-							</ul>
 
-							<div class="header-cart-total">
-								Total: <?=$woocommerce->cart->get_cart_total();?>
-							</div>
 
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
-									</a>
-								</div>
 
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
+
 				</div>
 			</div>
 

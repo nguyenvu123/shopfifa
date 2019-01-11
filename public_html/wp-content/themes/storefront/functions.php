@@ -34,6 +34,8 @@ require 'inc/storefront-template-hooks.php';
 require 'inc/storefront-template-functions.php';
 include APP_PATH.'/inc/Define.php';
 include APP_PATH.'/inc/Setup.php';
+include APP_PATH.'/inc/custom-fontend/mini-cart.php';
+
 
 if ( class_exists( 'Jetpack' ) ) {
 	$storefront->jetpack = require 'inc/jetpack/class-storefront-jetpack.php';
