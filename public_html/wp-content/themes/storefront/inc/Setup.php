@@ -126,19 +126,19 @@ if (!function_exists('loop_columns')) {
 }
 
 
-    function woocommerce_catalog_ordering() {
+     function woocommerce_catalog_ordering() {
         if ( ! wc_get_loop_prop( 'is_paginated' ) || ! woocommerce_products_will_display() ) {
             return;
         }
         $orderby                 = isset( $_GET['orderby'] ) ? wc_clean( wp_unslash( $_GET['orderby'] ) ) : apply_filters( 'woocommerce_default_catalog_orderby', get_option( 'woocommerce_default_catalog_orderby' ) ); // WPCS: sanitization ok, input var ok, CSRF ok.
         $show_default_orderby    = 'menu_order' === apply_filters( 'woocommerce_default_catalog_orderby', get_option( 'woocommerce_default_catalog_orderby' ) );
         $catalog_orderby_options = apply_filters( 'woocommerce_catalog_orderby', array(
-            'menu_order' => __( 'Default ', 'woocommerce' ),
+            'menu_order' => __( 'Default sorting', 'woocommerce' ),
             'popularity' => __( 'Sort by popularity', 'woocommerce' ),
             'rating'     => __( 'Sort by average rating', 'woocommerce' ),
             'date'       => __( 'Sort by newness', 'woocommerce' ),
             'price'      => __( 'Sort by price: low to high', 'woocommerce' ),
-            'price-desc' => __( 'Sort by price: high ', 'woocommerce' ),
+            'price-desc' => __( 'Sort by price: high to low', 'woocommerce' ),
         ) );
 
         if ( wc_get_loop_prop( 'is_search' ) ) {
