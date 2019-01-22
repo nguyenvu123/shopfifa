@@ -24,6 +24,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
+<div class="include-prd">
+	
+
+
 <li <?php wc_product_class(); ?>>
 	<?php $image = get_the_post_thumbnail_url($post->ID, ITEM_PRODUCT_HOME); ?>
 	<div class="block2">
@@ -45,7 +49,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 		<div class="block2-txt p-t-20">
 			<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-				<?= $product->name ?>
+				<?= $post->post_title; ?>
 			</a>
 			<p><?=$post->post_excerpt ?></p>
 			<?php if ( $product->is_on_sale() ) { ?>
@@ -64,3 +68,4 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		</div>
 	</div>
 </li>
+</div>

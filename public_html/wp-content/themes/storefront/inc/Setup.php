@@ -30,7 +30,7 @@ function athena_setup(){
     ) );
     add_theme_support( 'post-thumbnails' );
     add_post_type_support( 'page', 'excerpt' );
-    add_image_size(ITEM_PRODUCT_HOME,270,360,TRUE);
+    add_image_size(ITEM_PRODUCT_HOME,270,160,TRUE); 
      add_image_size(ITEM_PRODUCT_MINICART,320,320,TRUE);
     
    
@@ -218,28 +218,28 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
                         </a>
 
                         <span class="header-cart-item-info">
-                            <?=$quantity ?> x <?= $price ?>đ
+                            <?=$quantity ?> x <?= number_format($price) ?>đ
                         </span>
                     </div>
                 </li>
             </ul>
             <?php } ?>
             <div class="header-cart-total">
-                Total: <?=$woocommerce->cart->get_cart_total();?>
+                Tổng: <?=$woocommerce->cart->get_cart_total();?>
             </div>
 
             <div class="header-cart-buttons">
                 <div class="header-cart-wrapbtn">
                     <!-- Button -->
-                    <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                        View Cart
+                    <a href="/custom-checkout/" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                        Giỏ hàng
                     </a>
                 </div>
 
                 <div class="header-cart-wrapbtn">
                     <!-- Button -->
-                    <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                        Check Out
+                    <a href="/cart-custom/" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                        Thanh toán
                     </a>
                 </div>
             </div>
@@ -265,4 +265,4 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
     <?php
     $fragments['span.header-icons-noti'] = ob_get_clean();
     return $fragments;
-}
+} 

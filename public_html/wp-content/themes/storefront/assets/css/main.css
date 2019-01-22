@@ -2374,6 +2374,49 @@ body {padding-right: 0px !important;}
 .wrap-side-menu .side-menu .menu-item {
   background: #e65540;
 }
+.bg6 {
+  background-color: #000000;
+}
+
+.s-text8{
+  color: white;
+}
+.block2-txt.p-t-20 a{
+    color: red;
+    font-size: 18px;
+    font-style: italic
+}
+.woof_list.woof_list_radio .woof_term_15 {
+    display: none;
+}
+.side-menu .main-menu > li > a{
+    padding-left: 0;
+    margin-left: 20px;
+}
+.woocommerce-product-gallery ol li{
+  display: inline-block;
+}
+.woocommerce-product-gallery__wrapper a img{
+  width: 100%;
+ 
+}
+#main_banner_prd{
+  margin-bottom: 20px;
+}
+#main_banner_prd img{
+  width: 100%;
+}
+img {
+  opacity: 1 !important;
+
+}
+.woocommerce-product-gallery__image {
+pointer-events: none !important;
+}﻿
+.woof_redraw_zone{
+  display: none;
+}
+
 /*[ Input NumProduct ]
 ///////////////////////////////////////////////////////////
 */

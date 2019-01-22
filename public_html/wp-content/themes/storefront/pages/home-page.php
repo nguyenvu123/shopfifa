@@ -61,7 +61,8 @@
 		<div class="container">
 			<div class="sec-title p-b-22">
 				<h3 class="m-text5 t-center">
-					Our Products
+					<?=get_field("home_title_tab") ?>
+					
 				</h3>
 			</div>
 
@@ -70,10 +71,10 @@
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs" role="tablist">
 					<li class="nav-item">
-						<a class="nav-link active" data-toggle="tab" href="#featured" role="tab">Acc ngon!</a>
+						<a class="nav-link active" data-toggle="tab" href="#featured" role="tab"><?=get_field("home_title_top_acc") ?></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#sale" role="tab">Sale</a>
+						<a class="nav-link" data-toggle="tab" href="#sale" role="tab"><?=get_field("home_title_top_sale") ?></a>
 					</li>
 				</ul>
 
@@ -116,7 +117,7 @@
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="<?=get_permalink() ?>" class="block2-name dis-block s-text3 p-b-5">
 											<?= $post->post_title ?>
 										</a>
 										<p><?=$post->post_excerpt ?></p>
@@ -179,16 +180,20 @@
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="<?=get_permalink() ?>" class="block2-name dis-block s-text3 p-b-5">
 											<?= $post->post_title ?>
 										</a>
-
+										<p><?=$post->post_excerpt ?></p>
+										<?php if( $product->is_on_sale() ){ ?>
+											<span class="block2-oldprice m-text7 p-r-5">
+											<?= number_format($product->get_sale_price()) ?> đ
+										</span>
+										<?php} else{ ?>
 										<span class="block2-price m-text6 p-r-5">
 											<?= number_format($product->get_regular_price()) ?> đ
 										</span>
-										<span class="block2-newprice m-text8 p-r-5">
-											<?= number_format($product->get_sale_price()) ?> đ
-										</span>
+										
+									<?php } ?>
 									</div>
 								</div>
 							</div>
@@ -206,7 +211,7 @@
 				
 				</div>
 			</div>
-			<a href="#">XEM TẤT CẢ</a>
+			<a href="/shop/">XEM TẤT CẢ</a>
 		</div> 
 	</section>
 
@@ -215,16 +220,16 @@
 		<div class="overlay0 p-t-190 p-b-200">
 			<div class="flex-col-c-m p-l-15 p-r-15">
 				<span class="m-text9 p-t-45 fs-20-sm">
-					The Beauty
+					<?= get_field("title_video_1") ?>
 				</span>
 
 				<h3 class="l-text1 fs-35-sm">
-					Lookbook
+					<?= get_field("title_video_2") ?>
 				</h3>
 
 				<span class="btn-play s-text4 hov5 cs-pointer p-t-25" data-toggle="modal" data-target="#modal-video-01">
 					<i class="fa fa-play" aria-hidden="true"></i>
-					Play Video
+					<?= get_field("title_video_3") ?>
 				</span>
 			</div>
 		</div>
