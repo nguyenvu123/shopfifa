@@ -2374,9 +2374,7 @@ body {padding-right: 0px !important;}
 .wrap-side-menu .side-menu .menu-item {
   background: #e65540;
 }
-.bg6 {
-  background-color: #000000;
-}
+
 
 .s-text8{
   color: white;
@@ -2416,7 +2414,31 @@ pointer-events: none !important;
 .woof_redraw_zone{
   display: none;
 }
-
+ul.products li.product img{
+  margin-bottom: 0 !important;
+}
+.content-area{
+  background: white; 
+  float: none;
+}
+.widget-area{
+ display: none !important;
+}
+.hentry.type-page .entry-header{
+  border-bottom: 0;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 50px;
+}
+body{
+ /* position: relative;*/
+}
+.bg6 {
+  background-color: #000000;
+/*  position: absolute;*/
+  width: 100%;
+  bottom: 0;
+}
 /*[ Input NumProduct ]
 ///////////////////////////////////////////////////////////
 */

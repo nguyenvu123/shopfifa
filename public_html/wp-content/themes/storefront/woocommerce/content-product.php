@@ -48,7 +48,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		</div>
 
 		<div class="block2-txt p-t-20">
-			<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+			<a href="<?=get_permalink() ?>" class="block2-name dis-block s-text3 p-b-5">
 				<?= $post->post_title; ?>
 			</a>
 			<p><?=$post->post_excerpt ?></p>

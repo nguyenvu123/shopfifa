@@ -266,3 +266,10 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
     $fragments['span.header-icons-noti'] = ob_get_clean();
     return $fragments;
 } 
+
+add_action( 'get_header', 'remove_storefront_sidebar' );
+function remove_storefront_sidebar() {
+    if ( is_woocommerce() ) {
+        remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
+    }
+}
