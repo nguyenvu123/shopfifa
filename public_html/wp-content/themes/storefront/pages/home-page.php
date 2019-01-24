@@ -97,6 +97,7 @@
 						while ( $loop->have_posts() ) : $loop->the_post();
 							$image = get_the_post_thumbnail_url($post->ID, ITEM_PRODUCT_HOME);
 						 ?>
+						 <?php if( $product->is_in_stock()): ?>
 							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
 								<!-- Block2 -->
 								<div class="block2">
@@ -137,7 +138,7 @@
 									</div>
 								</div>
 							</div>
-							<?php endwhile; endif; ?>
+							<?php endif; endwhile; endif; ?>
 						</div>
 					</div>
 
@@ -153,7 +154,7 @@
 					$loop = new WP_Query( $args );
 					if ( $loop->have_posts() ) :
 						while ( $loop->have_posts() ) : $loop->the_post();
-							if($product->is_on_sale()):
+							if($product->is_on_sale() && $product->is_in_stock()):
 								$image = get_the_post_thumbnail_url($post->ID, ITEM_PRODUCT_HOME);
 								
 						?>
@@ -188,7 +189,7 @@
 											<span class="block2-oldprice m-text7 p-r-5">
 											<?= number_format($product->get_sale_price()) ?> đ
 										</span>
-										<?php} else{ ?>
+										<?php } else{ ?>
 										<span class="block2-price m-text6 p-r-5">
 											<?= number_format($product->get_regular_price()) ?> đ
 										</span>

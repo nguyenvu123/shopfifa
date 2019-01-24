@@ -2365,6 +2365,12 @@ body {padding-right: 0px !important;}
 .current_page_item a{
   border-bottom: 1px solid #333333 !important;
 }
+@media (max-width: 767px){
+  .current_page_item a{
+    border-bottom: 1px solid white !important;
+  }
+  
+}
 .woocommerce-billing-fields__field-wrapper .form-row{
   display: flex;
   align-items: center;
@@ -2411,10 +2417,6 @@ body {padding-right: 0px !important;}
 }
 #main_banner_prd img{
   width: 100%;
-}
-img {
-  opacity: 1 !important;
-
 }
 .woocommerce-product-gallery__image {
 pointer-events: none !important;
@@ -2473,6 +2475,12 @@ min-height: 600px;
   text-align: center;
   text-align: center;
   padding-top: 80px;
+}
+.include_checkout .form-row label{
+  width: 100%;
+}
+.added_to_cart{
+  font-size: 13px !important;
 }
 /*[ Input NumProduct ]
 ///////////////////////////////////////////////////////////

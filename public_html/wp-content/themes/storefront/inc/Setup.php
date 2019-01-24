@@ -267,3 +267,32 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
     $fragments['span.header-icons-noti'] = ob_get_clean();
     return $fragments;
 } 
+
+add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+
+function custom_pre_get_posts_query( $q ) {
+
+if ( ! $q->is_main_query() ) return;
+if ( ! $q->is_post_type_archive() ) return;
+if ( ! is_admin() ) {
+
+
+$q->set( 'meta_query', array(array(
+    'key'       => '_stock_status',
+    'value'     => 'outofstock',
+    'compare'   => 'NOT IN'
+)));
+
+}
+
+remove_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+
+}
+
+add_filter( 'woocommerce_get_image_size_single', function( $size ) {
+    return array(
+        'width'  => 1200,
+        'height' => 800,
+        'crop'   => 1,
+    );
+} );
