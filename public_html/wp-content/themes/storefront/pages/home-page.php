@@ -28,26 +28,16 @@
 			<div class="slick1">
 			<?php if( have_rows('home_banner') ):
 		    	while ( have_rows('home_banner') ) : the_row();
-		    	$image = get_sub_field("image");
+		    	$image_id = get_sub_field("image");
+		    	$image = wp_get_attachment_image_src( $image_id, 'banner' );
 		    	$title = get_sub_field("title");
      		?>
-				<div class="item-slick1 item1-slick1" style="background-image: url('<?=$image["url"] ?>');">
+			<!-- 	<div class="item-slick1 item1-slick1" style="background-image: url('<?=$image[0] ?>');">
 					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-						<h2 class="caption1-slide1 xl-text2 t-center bo14 p-b-6 animated visible-false m-b-22" data-appear="fadeInUp">
-							<?= get_sub_field("title") ?>
-						</h2>
-
-						<span class="caption2-slide1 m-text1 t-center animated visible-false m-b-33" data-appear="fadeInDown">
-							<?= get_sub_field("sub_title") ?>
-						</span>
-
-						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
-							<!-- Button -->
-							<a href="tel:+0332751221" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Gọi ngay!
-							</a>
-						</div>
 					</div>
+				</div> -->
+				<div class="item-slick1 item1-slick1">
+					<img src="<?=$image[0] ?>">
 				</div>
 
 			
@@ -185,16 +175,14 @@
 											<?= $post->post_title ?>
 										</a>
 										<p><?=$post->post_excerpt ?></p>
-										<?php if( $product->is_on_sale() ){ ?>
+										
 											<span class="block2-oldprice m-text7 p-r-5">
-											<?= number_format($product->get_sale_price()) ?> đ
-										</span>
-										<?php } else{ ?>
-										<span class="block2-price m-text6 p-r-5">
-											<?= number_format($product->get_regular_price()) ?> đ
+											<?=  number_format($product->get_regular_price())  ?> đ
 										</span>
 										
-									<?php } ?>
+										<span class="block2-price m-text8 p-r-5">
+											<?= number_format($product->get_sale_price()) ?> đ
+										</span>
 									</div>
 								</div>
 							</div>

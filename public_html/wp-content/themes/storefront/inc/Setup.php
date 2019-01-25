@@ -31,7 +31,8 @@ function athena_setup(){
     add_theme_support( 'post-thumbnails' );
     add_post_type_support( 'page', 'excerpt' );
     add_image_size(ITEM_PRODUCT_HOME,270,160,TRUE); 
-     add_image_size(ITEM_PRODUCT_MINICART,320,320,TRUE);
+    add_image_size(ITEM_PRODUCT_MINICART,320,320,TRUE);
+    add_image_size(BANNER,1500,420,TRUE);
     
    
 }

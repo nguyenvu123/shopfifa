@@ -1367,7 +1367,7 @@ a.remove_mini_cart{
 }
 
 .item-slick1 {
-  height: 570px;
+  height: 420px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1455,7 +1455,7 @@ a.remove_mini_cart{
   }
 
   .item-slick1 {
-    height: 470px;
+    height: 400px;
   }
 }
 
@@ -1472,7 +1472,7 @@ a.remove_mini_cart{
   }
 
   .item-slick1 {
-    height: 370px;
+    height: 330px;
   }
 }
 
@@ -2485,6 +2485,25 @@ min-height: 600px;
 .block2-btn-addcart.w-size1.trans-0-4{
   text-align: center;
 }
+.phone{
+  z-index: 9;
+}
+.phone img{
+  width: 102px;
+  display: inline-block;
+}
+.phone a{
+  padding-right: 30px;
+}
+.btn-show-menu{
+  width: 100%;
+  justify-content: flex-end;
+}
+.logo2 img{
+  max-height: 95px;
+}
+
+
 /*[ Input NumProduct ]
 ///////////////////////////////////////////////////////////
 */

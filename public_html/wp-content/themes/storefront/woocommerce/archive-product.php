@@ -30,7 +30,10 @@ do_action( 'woocommerce_before_main_content' );
 
 ?>
 <div id="main_banner_prd">
-		<img src="<?=get_field("main_banner","option"); ?>">
+	<?php
+	 	$image_id = get_field("main_banner","option");;
+		$image = wp_get_attachment_image_src( $image_id, 'banner' ); ?>
+		<img src="<?=$image[0] ?>">
 	</div>
 <div class="container include-shop">
 

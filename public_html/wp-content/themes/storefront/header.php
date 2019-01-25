@@ -81,6 +81,11 @@
 				</a>
 
 				<div class="topbar-child2">
+					<div class=phone>
+						<img src="<?= get_field("icon_phone","option") ?>">
+						<a href="tel:<?= get_field("phone_number","option") ?>">Phone: <?= get_field("phone_number","option") ?></a>
+						
+					</div>
 						<span class="topbar-email">
 						<?php if($user->user_email){ ?>
 						
@@ -93,10 +98,7 @@
 						<?php } ?>
 						
 					</span>
-					<div class=phone>
-						<a href="<?= get_field("phone_number","option") ?>"><?= get_field("phone_number","option") ?></a>
-						<img src="<?= get_field("icon_phone","option") ?>">
-					</div>
+					
 					
 
 					<!--  -->
@@ -145,11 +147,16 @@
 			<a href="/" class="logo-mobile">
 				<img src="<?= get_field("logo","option") ?>" alt="IMG-LOGO">
 			</a>
+			<div class=phone>
+				<img src="<?= get_field("icon_phone","option") ?>">
+				<a href="tel:<?= get_field("phone_number","option") ?>"><?= get_field("phone_number","option") ?></a>		
+			</div>
 
 			<!-- Button show menu -->
 			<div class="btn-show-menu">
 				<!-- Header Icon mobile -->
 				<div class="header-icons-mobile">
+
 					<a href="/my-account" class="header-wrapicon1 dis-block">
 						<img src="<?= get_field("avata","option") ?>" class="header-icon1" alt="ICON">
 					</a>

@@ -9,6 +9,8 @@ define('TVLGIAO_THEME_CUSTOMIZE', get_template_directory() . '/customize/');
 define('ITEM_PRODUCT_HOME', 'item_product_home');
 define('ITEM_PRODUCT_MINICART', 'item_product_mini_cart');
 define('AT_LOGO', 'at_logo');
+define('BANNER', 'banner');
+
 /**
  * Image Size
 **/
