@@ -2482,6 +2482,9 @@ min-height: 600px;
 .added_to_cart{
   font-size: 13px !important;
 }
+.block2-btn-addcart.w-size1.trans-0-4{
+  text-align: center;
+}
 /*[ Input NumProduct ]
 ///////////////////////////////////////////////////////////
 */

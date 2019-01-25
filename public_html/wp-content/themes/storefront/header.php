@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Home 02</title> 
+	<title>Accfifa.vn</title> 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.png" />
 	<link rel="stylesheet" type="text/css" href="wp-content/themes/storefront/assets/vendor/slick/slick.css">
 	<?php wp_head(); ?>
 </head>
@@ -92,7 +93,10 @@
 						<?php } ?>
 						
 					</span>
-
+					<div class=phone>
+						<a href="<?= get_field("phone_number","option") ?>"><?= get_field("phone_number","option") ?></a>
+						<img src="<?= get_field("icon_phone","option") ?>">
+					</div>
 					
 
 					<!--  -->
