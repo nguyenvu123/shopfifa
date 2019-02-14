@@ -297,3 +297,16 @@ add_filter( 'woocommerce_get_image_size_single', function( $size ) {
         'crop'   => 1,
     );
 } );
+
+add_action("wp_ajax_fitler_price", "fitler_price");
+add_action("wp_ajax_nopriv_fitler_price", "fitler_price");
+
+function fitler_price() {
+     $wp_ajax = true;
+    ob_start();
+       include( locate_template('template-parts/filter_price.php', false, false ));
+    $content = ob_get_clean();
+    echo $content;
+    die();
+}
+

@@ -2394,7 +2394,7 @@ body {padding-right: 0px !important;}
   color: white;
 }
 .block2-txt.p-t-20 a{
-    color: red;
+    color: white;
     font-size: 18px;
     font-style: italic
 }
@@ -2502,11 +2502,33 @@ min-height: 600px;
 .logo2 img{
   max-height: 95px;
 }
+.contact-form{
+  text-align: center;
+}
+.contact-form label{
+  text-align: left;
+  max-width: 100%;
+}
+.contact-form input{
+  max-width: 100%;
+  border-radius: 23px;
+}
+.contact-form h1{
+  margin: 55px;
+}
 
+input[type="submit"]{
+  background-color: #e65540;
+  color: white;
+  border-radius: 12px;
+  transition: all 1s;
+  outline: none;
+}
+textarea {
+    outline: none;
+    max-height: 144px;
+}
 
-/*[ Input NumProduct ]
-///////////////////////////////////////////////////////////
-*/
 input.num-product {
     -moz-appearance: textfield;
     appearance: none;
@@ -2519,4 +2541,47 @@ input.num-product::-webkit-inner-spin-button {
     margin: 0; 
 }
 
-
+.bgwhite.p-t-45.p-b-58{
+  background-image: url('../images/header.jpg')
+}
+.bgwhite.homepage .container{
+  background: black;
+}
+.bgwhite.homepage .container .p-b-50{
+  border: 1px solid #929090;
+}
+.bgwhite.homepage .container .p-b-50 ul li{
+  color: #dadada;
+}
+.bgwhite.homepage .container .flex-c-m{
+  display: none;
+}
+.container.include-banner{
+  height: 100%;
+  position: relative;
+}
+.content-banner.container{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: red;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 40px;
+}
+.m-text5.t-center p{
+  color: #e65540;
+  font-size: 20px;
+  font-weight: 700;
+}
+.loc{
+    text-align: center;
+    padding-top: 33px;
+}
+.loc select{
+      width: 17%;
+    height: 42px;
+    color: #fff!important;
+    background: #0f1113;
+    border: 1px solid #30343c;
+}
