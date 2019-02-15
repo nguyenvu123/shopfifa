@@ -12,8 +12,9 @@ global $post;
 		$args['meta_query'] = array(
             array(
                 'key' => '_price',
-                'value' => $price_array[1],
-                'compare' => '<='
+	            'value' => array(1000000 , 100000000 ),
+	            'compare' => 'BETWEEN',
+	            'type' => 'NUMERIC'
             )
         );
 	}

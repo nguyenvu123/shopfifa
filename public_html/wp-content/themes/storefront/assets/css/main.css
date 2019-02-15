@@ -2578,10 +2578,25 @@ input.num-product::-webkit-inner-spin-button {
     text-align: center;
     padding-top: 33px;
 }
+
 .loc select{
-      width: 17%;
+    width: 17%;
     height: 42px;
     color: #fff!important;
     background: #0f1113;
     border: 1px solid #30343c;
+}
+ @media (max-width: 767px){
+  .loc{
+     display: flex;
+      flex-direction: column;
+  }
+  .loc select{
+     width: 100%;
+      margin-bottom: 20px;
+  }
+  .content-banner.container{
+    font-size: 20px;
+  }
+       
 }
