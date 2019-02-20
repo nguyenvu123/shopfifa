@@ -5,18 +5,12 @@
 <?php get_header(); 
 
 ?>
-	<!-- Slide1 -->
-		<!-- Container Selection1 -->
 	<div id="dropDownSelect1"></div>
-
-	<!-- Modal Video 01-->
 	<div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
-
 		<div class="modal-dialog" role="document" data-dismiss="modal">
 			<div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
-
 			<div class="wrap-video-mo-01">
-				<div class="w-full wrap-pic-w op-0-0"><img src="wp-content/themes/storefront/assets/images//icons/video-16-9.jpg" alt="IMG"></div>
+				<div class="w-full wrap-pic-w op-0-0"><img src="wp-content/themes/storefront/assets/images//icons/video-16-9.jpg" alt="acc fifa"></div>
 				<div class="video-mo-01">
 					<iframe src="https://www.youtube.com/embed/<?=get_field("code_video")?>?rel=0&amp;showinfo=0" allowfullscreen></iframe>
 				</div>
@@ -32,22 +26,14 @@
 		    	$image = wp_get_attachment_image_src( $image_id, 'banner' );
 		    	$title = get_sub_field("title");
      		?>
-			<!-- 	<div class="item-slick1 item1-slick1" style="background-image: url('<?=$image[0] ?>');">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-					</div>
-				</div> -->
-				<div class="item-slick1 item1-slick1" style="background-image: url('<?=$image[0] ?>')">
-					<div class="container include-banner">
-						<div class="content-banner container">
-						<?= get_sub_field("content_banner"); ?>
-					</div>
-					</div>
-					
+			<div class="item-slick1 item1-slick1" style="background-image: url('<?=$image[0] ?>')">
+				<div class="include-banner">
+					<div class="content-banner">
+					<?= get_sub_field("content_banner"); ?>
 				</div>
-
-			
+				</div>
+			</div>
 			<?php  endwhile; endif; ?>
-
 			</div>
 		</div>
 	</section>
@@ -60,57 +46,44 @@
 					
 				</h3>
 				<div class="loc">
-					<!-- <form action="<?php echo get_template_directory_uri() ?>/filter.php" method="get"> -->
 						<select name="filler" id="filler" >
-					  		<option value="">Tìm theo giá</option>
+					  		<option value="" disabled selected hidden>Tìm theo giá</option>
 		                    <option value="50000-100000">Acc 50k - 100k</option>
 		                    <option value="100000-300000">Acc 100k - 300k</option>
 		                    <option value="300000-500000">Acc 300k - 500k</option>
 		                    <option value="500000-1000000">Acc 500k - 1 triệu</option>
-		                  	<option value="1000000">trên 1 triệu</option>
+		                  	<option value="1000000">Trên 1 triệu</option>
 						</select>
 						<input class="filter_price_submit" type="submit" name="add" value="Tìm kiếm" />
-				<!-- 	</form> -->
 				</div>
-				
 			</div>
-
-			<!-- Tab01 -->
 			<div class="tab01">
 				<div class="tab-content p-t-35">
 					<div class="tab-pane fade fade show active" id="featured" role="tabpanel">
 						<div class="row ketqua">
 					<?php
-					$price_filter =  $_GET['price'];
-					 $price_array  = explode('-', $price_filter);
-
+					$paged = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1;
 					$args = array(
 						'post_type' => 'product',
-						'posts_per_page' => -1,
+						'posts_per_page' => 12,
+						'paged'  => $paged,
+						'meta_query' => array(
+					        array(
+					            'key' => '_stock_status',
+					            'value' => 'instock'
+					        ),
+					        array(
+					            'key' => '_backorders',
+					            'value' => 'no'
+					        ),
+					    )
 					);
 				
-					if($price_array[0]==1000000){
-						$args['meta_query'] = array(
-				            array(
-				                'key' => '_price',
-				                'value' => $price_array[1],
-				                'compare' => '<='
-				            )
-				        );
-					}
-					if($price_array[0] && $price_array[1] ){
-						$args['meta_query'] = array(
-				            array(
-				                'key' => '_price',
-					            'value' => array($price_array[0] , $price_array[1] ),
-					            'compare' => 'BETWEEN',
-					            'type' => 'NUMERIC'
-				            )
-				        );
-					}
 					$loop = new WP_Query( $args );
 					if ( $loop->have_posts() ) :
+						$i= 0;
 						while ( $loop->have_posts() ) : $loop->the_post();
+						
 							$image = get_the_post_thumbnail_url($post->ID, ITEM_PRODUCT_HOME);
 						 ?>
 						 <?php if( $product->is_in_stock()): ?>
@@ -119,7 +92,7 @@
 								<!-- Block2 -->
 								<div class="block2">
 									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src=" <?= $image?> " alt="IMG-PRODUCT">
+										<img src=" <?= $image?> " alt="acc fifa">
 
 										<div class="block2-overlay trans-0-4">
 											<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -154,42 +127,30 @@
 										<?php } ?>
 									</div>
 								</div>
+
 							</div>
-							<?php endif; endwhile; endif; ?>
+							<?php endif; endwhile;
+								wp_reset_query();
+							 endif; ?>
+						</div>
+					 	<div class="none-show">
+						 	<?php 
+								$big = 999999999; // need an unlikely integer
+								echo paginate_links( array(
+									'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+									'format' => '?paged=%#%',
+									'current' => max( 1, get_query_var('page') ),
+									'total' => $loop->max_num_pages
+									) );
+								?>
 						</div>
 					</div>
-
-					<!--  -->
-			
-
-					<!--  -->
 				
 				</div>
 			</div>
 			
 		</div> 
 	</section>
-
-	<!-- Banner video -->
-<!-- 	<section class="parallax0 parallax100" style="background-image: url(<?= get_field("image_for_video") ?>);">
-		<div class="overlay0 p-t-190 p-b-200">
-			<div class="flex-col-c-m p-l-15 p-r-15">
-				<span class="m-text9 p-t-45 fs-20-sm">
-					<?= get_field("title_video_1") ?>
-				</span>
-
-				<h3 class="l-text1 fs-35-sm">
-					<?= get_field("title_video_2") ?>
-				</h3>
-
-				<span class="btn-play s-text4 hov5 cs-pointer p-t-25" data-toggle="modal" data-target="#modal-video-01">
-					<i class="fa fa-play" aria-hidden="true"></i>
-					<?= get_field("title_video_3") ?>
-				</span>
-			</div>
-		</div>
-	</section> -->
-<!-- Container Selection1 -->
 	<script type="text/javascript">
 	  $('.block2-btn-addcart').each(function(){
             var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
@@ -217,6 +178,7 @@
           jQuery.post( ajaxurl, data, function( response ) {
           	if(response!=''){
           		jQuery( '.ketqua' ).html( response );
+          		jQuery('.none-show').hide();
           	}
           })
         });

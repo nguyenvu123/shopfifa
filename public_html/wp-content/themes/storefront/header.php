@@ -17,10 +17,11 @@
 	<!-- header fixed -->
 	<div class="wrap_header fixed-header2 trans-0-4">
 		<!-- Logo -->
-		<a href="/" class="logo">
-			<img src="<?= get_field("logo","option") ?>" alt="IMG-LOGO">
-		</a>
-
+		<h1>
+			<a href="/" class="logo">
+				<img src="<?= get_field("logo","option") ?>" alt="accfifa">
+			</a>
+		</h1>
 		<!-- Menu -->
 		<div class="wrap_menu">
 			<nav class="menu">
@@ -36,13 +37,13 @@
 		<!-- Header Icon -->
 		<div class="header-icons">
 			<a href="/my-account" class="header-wrapicon1 dis-block">
-				<img src="<?= get_field("avata","option") ?>" class="header-icon1" alt="ICON">
+				<img src="<?= get_field("avata","option") ?>" class="header-icon1" alt="accfifa">
 			</a>
 
 			<span class="linedivide1"></span>
 
 			<div class="header-wrapicon2">
-				<img src="<?= get_field("cat_image","option") ?>" class="header-icon1 js-show-header-dropdown" alt="ICON">
+				<img src="<?= get_field("cat_image","option") ?>" class="header-icon1 js-show-header-dropdown" alt="accfifa">
 				<span class="header-icons-noti">0</span>
 
 				<!-- Header cart noti -->
@@ -76,10 +77,11 @@
 				</div>
 
 				<!-- Logo2 -->
-				<a href="/" class="logo2">
-					<img src="<?= get_field("logo","option") ?>" alt="IMG-LOGO">
-				</a>
-
+				<h1>
+					<a href="/" class="logo2">
+						<img src="<?= get_field("logo","option") ?>" alt="accfifa">
+					</a>
+				</h1>
 				<div class="topbar-child2">
 					<div class=phone>
 						<img src="<?= get_field("icon_phone","option") ?>">
@@ -98,28 +100,14 @@
 						<?php } ?>
 						
 					</span>
-					
-					
-
-					<!--  -->
 					<a href="/my-account" class="header-wrapicon1 dis-block m-l-30">
-						<img src="<?= get_field("avata","option") ?>" class="header-icon1" alt="ICON">
+						<img src="<?= get_field("avata","option") ?>" class="header-icon1" alt="accfifa">
 					</a>
 
 					<span class="linedivide1"></span>
-
-
-
 					<?php do_action('tvlgiao_wpdance_header_init_action');  ?>
-
-
-
-
-
-
 				</div>
 			</div>
-
 			<div class="wrap_header">
 
 				<!-- Menu -->
@@ -145,7 +133,7 @@
 		<div class="wrap_header_mobile">
 			<!-- Logo moblie -->
 			<a href="/" class="logo-mobile">
-				<img src="<?= get_field("logo","option") ?>" alt="IMG-LOGO">
+				<img src="<?= get_field("logo","option") ?>" alt="accfifa">
 			</a>
 			<div class=phone>
 				<img src="<?= get_field("icon_phone","option") ?>">
@@ -158,22 +146,18 @@
 				<div class="header-icons-mobile">
 
 					<a href="/my-account" class="header-wrapicon1 dis-block">
-						<img src="<?= get_field("avata","option") ?>" class="header-icon1" alt="ICON">
+						<img src="<?= get_field("avata","option") ?>" class="header-icon1" alt="accfifa">
 					</a>
 
 					<span class="linedivide2"></span>
 
 					<div class="header-wrapicon2">
-						<img src="<?= get_field("cat_image","option") ?>" class="header-icon1 js-show-header-dropdown" alt="ICON">
+						<img src="<?= get_field("cat_image","option") ?>" class="header-icon1 js-show-header-dropdown" alt="accfifa">
 						<span class="header-icons-noti">0</span>
 
 						<!-- Header cart noti mobilevuvu-->
 					<div class="header-cart header-dropdown">
 						</div>
-
-						
-
-
 					</div>
 				</div>
 

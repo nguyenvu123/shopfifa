@@ -210,7 +210,7 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
                  <ul class="header-cart-wrapitem">
                 <li class="header-cart-item">
                     <div class="header-cart-item-img">
-                        <img src="<?=$image ?>" alt="IMG">
+                        <img src="<?=$image ?>" alt="acc fifa">
                     </div> 
                    
                     <div class="header-cart-item-txt">
