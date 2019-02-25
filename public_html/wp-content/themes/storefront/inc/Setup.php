@@ -210,7 +210,7 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
                  <ul class="header-cart-wrapitem">
                 <li class="header-cart-item">
                     <div class="header-cart-item-img">
-                        <img src="<?=$image ?>" alt="IMG">
+                        <img src="<?=$image ?>" alt="acc fifa">
                     </div> 
                    
                     <div class="header-cart-item-txt">
@@ -328,3 +328,15 @@ function misha_remove_my_account_links( $menu_links ){
     return $menu_links;
  
 }
+
+function remove_disabling_update_cart_button_on_cart() {
+    if ( is_cart() ) {
+        echo "<script type='text/javascript'>
+            jQuery(document).ready(function() {
+                jQuery( '.update_cart' ).removeAttr( 'disabled' );
+            });
+        </script>";
+    }
+}
+// Add script to footer
+add_action( 'wp_footer', 'remove_disabling_update_cart_button_on_cart', PHP_INT_MAX );
