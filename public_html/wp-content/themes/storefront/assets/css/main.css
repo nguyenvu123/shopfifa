@@ -2556,18 +2556,15 @@ input.num-product::-webkit-inner-spin-button {
 .bgwhite.homepage .container .flex-c-m{
   display: none;
 }
-.container.include-banner{
+.include-banner{
   height: 100%;
   position: relative;
 }
-.content-banner.container{
+.content-banner{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: red;
     text-transform: uppercase;
-    font-weight: 700;
-    font-size: 40px;
 }
 .m-text5.t-center p{
   color: #e65540;
@@ -2595,8 +2592,24 @@ input.num-product::-webkit-inner-spin-button {
      width: 100%;
       margin-bottom: 20px;
   }
-  .content-banner.container{
-    font-size: 20px;
+  .content-banner h3{
+    font-size: 15px;
+  }
+  .wrap-side-menu .side-menu .menu-item{
+    border-top: 1px solid;
+    text-align: center;
   }
        
+}
+ @media (max-width: 1290px) and (min-width: 993px){
+.phone img{
+  display: none;
+  }
+  .m-l-30 {
+    margin-left: 19px;
+  }
+  .phone a{
+        padding-right: 5px;
+  }
+ 
 }

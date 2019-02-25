@@ -233,14 +233,14 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
             <div class="header-cart-buttons">
                 <div class="header-cart-wrapbtn">
                     <!-- Button -->
-                    <a href="/custom-checkout/" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                    <a href="/cart-custom/" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                         Giỏ hàng
                     </a>
                 </div>
 
                 <div class="header-cart-wrapbtn">
                     <!-- Button -->
-                    <a href="/cart-custom/" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                    <a href="/custom-checkout/" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                         Thanh toán
                     </a>
                 </div>
