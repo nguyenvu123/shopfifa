@@ -2632,3 +2632,15 @@ input.num-product::-webkit-inner-spin-button {
 .none-show .current{
   color: #e65540;
 }
+.cart .bgwhite .flex-w{
+  flex-wrap: inherit;
+}
+.table-shopping-cart .column-1{
+  position: relative;
+}
+.remove_item_cart{
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 35px;
+}
