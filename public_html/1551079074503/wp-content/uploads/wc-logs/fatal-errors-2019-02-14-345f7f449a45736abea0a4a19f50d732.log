@@ -1,0 +1,78 @@
+2019-02-14T07:36:44+00:00 CRITICAL Call to undefined function wc_placeholder_img_src() in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\plugins\woocommerce\includes\admin\class-wc-admin-assets.php on line 221
+
+2019-02-14T07:37:13+00:00 CRITICAL Call to undefined function wc_placeholder_img_src() in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\plugins\woocommerce\includes\admin\class-wc-admin-assets.php on line 221
+
+2019-02-14T09:02:17+00:00 CRITICAL syntax error, unexpected 'array' (T_ARRAY), expecting ')' in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\pages\home-page.php on line 94
+
+2019-02-14T09:09:50+00:00 CRITICAL Function name must be a string in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\pages\home-page.php on line 85
+
+2019-02-14T09:09:59+00:00 CRITICAL Function name must be a string in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\pages\home-page.php on line 85
+
+2019-02-14T09:14:42+00:00 CRITICAL syntax error, unexpected 'if' (T_IF), expecting ')' in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\pages\home-page.php on line 92
+
+2019-02-14T09:20:14+00:00 CRITICAL syntax error, unexpected '}', expecting ')' in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\pages\home-page.php on line 111
+
+2019-02-14T09:20:48+00:00 CRITICAL syntax error, unexpected '}' in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\pages\home-page.php on line 112
+
+2019-02-14T09:21:48+00:00 CRITICAL syntax error, unexpected '}' in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\pages\home-page.php on line 112
+
+2019-02-14T09:30:11+00:00 CRITICAL syntax error, unexpected ')' in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\pages\home-page.php on line 112
+
+2019-02-14T09:39:17+00:00 CRITICAL syntax error, unexpected '!' in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\pages\home-page.php on line 110
+
+2019-02-14T09:45:20+00:00 CRITICAL syntax error, unexpected ')' in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\pages\home-page.php on line 93
+
+2019-02-14T09:46:40+00:00 CRITICAL Call to undefined function int() in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\pages\home-page.php on line 93
+
+2019-02-14T10:26:22+00:00 CRITICAL Array callback has to contain indices 0 and 1 in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 4
+
+2019-02-14T10:27:25+00:00 CRITICAL Array callback has to contain indices 0 and 1 in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 4
+
+2019-02-14T10:30:01+00:00 CRITICAL Call to a member function is_on_sale() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\inc\Setup.php on line 332
+
+2019-02-14T10:43:08+00:00 CRITICAL Call to a member function is_in_stock() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 34
+
+2019-02-14T10:47:32+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 37
+
+2019-02-14T10:48:11+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 37
+
+2019-02-14T10:48:35+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 37
+
+2019-02-14T10:50:39+00:00 CRITICAL Object of class WP_Query could not be converted to string in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 30
+
+2019-02-14T10:52:03+00:00 CRITICAL Object of class WP_Query could not be converted to string in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 30
+
+2019-02-14T10:52:24+00:00 CRITICAL Object of class WP_Query could not be converted to string in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 30
+
+2019-02-14T10:57:38+00:00 CRITICAL Call to a member function is_in_stock() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 34
+
+2019-02-14T10:58:45+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 36
+
+2019-02-14T10:59:23+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 36
+
+2019-02-14T11:00:12+00:00 CRITICAL syntax error, unexpected end of file in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 35
+
+2019-02-14T11:02:54+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 36
+
+2019-02-14T11:04:20+00:00 CRITICAL Call to a member function is_in_stock() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 34
+
+2019-02-14T11:04:29+00:00 CRITICAL Call to a member function is_in_stock() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 34
+
+2019-02-14T11:05:38+00:00 CRITICAL Call to a member function is_on_sale() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 60
+
+2019-02-14T11:06:02+00:00 CRITICAL Call to a member function is_on_sale() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 60
+
+2019-02-14T11:09:39+00:00 CRITICAL Call to a member function is_on_sale() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 59
+
+2019-02-14T11:10:04+00:00 CRITICAL Call to a member function is_on_sale() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 59
+
+2019-02-14T11:10:28+00:00 CRITICAL Call to a member function is_on_sale() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 60
+
+2019-02-14T11:12:40+00:00 CRITICAL Call to a member function is_on_sale() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 61
+
+2019-02-14T11:12:58+00:00 CRITICAL Call to a member function is_on_sale() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 61
+
+2019-02-14T11:16:17+00:00 CRITICAL Call to a member function is_on_sale() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 61
+
+2019-02-14T11:16:45+00:00 CRITICAL Call to a member function is_on_sale() on null in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\template-parts\filter_price.php on line 61
+

@@ -1,0 +1,8 @@
+2019-02-19T03:51:21+00:00 CRITICAL syntax error, unexpected '$image' (T_VARIABLE) in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\themes\storefront\pages\home-page.php on line 118
+
+2019-02-19T03:52:24+00:00 CRITICAL Call to undefined function wc_placeholder_img_src() in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\plugins\woocommerce\includes\admin\class-wc-admin-assets.php on line 221
+
+2019-02-19T03:52:43+00:00 CRITICAL Call to undefined function wc_placeholder_img_src() in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\plugins\woocommerce\includes\admin\class-wc-admin-assets.php on line 221
+
+2019-02-19T04:59:11+00:00 CRITICAL Call to undefined function wc_placeholder_img_src() in E:\program\xampp\htdocs\shopfifa4\public_html\wp-content\plugins\woocommerce\includes\admin\class-wc-admin-assets.php on line 221
+

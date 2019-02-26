@@ -166,6 +166,7 @@
 
     $('.btn-num-product-up').on('click', function(e){
         e.preventDefault();
+       
         var numProduct = Number($(this).prev().val());
         $(this).prev().val(numProduct + 1);
     });
