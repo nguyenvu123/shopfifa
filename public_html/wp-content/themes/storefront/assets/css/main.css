@@ -2599,6 +2599,7 @@ input.num-product::-webkit-inner-spin-button {
   .wrap-side-menu .side-menu .menu-item{
     border-top: 1px solid;
     text-align: center;
+
   }
   .block2-btn-addcart {
     bottom: 20px !important;
@@ -2642,5 +2643,8 @@ input.num-product::-webkit-inner-spin-button {
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
-  left: 35px;
+  left: 15px;
+}
+.container-table-cart{
+  border-bottom: 1px solid #e6e6e6;
 }

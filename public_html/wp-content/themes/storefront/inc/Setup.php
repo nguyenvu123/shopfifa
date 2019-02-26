@@ -194,11 +194,8 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
      function woocommerce_header_add_to_cart_fragment_mini($fragments) {
 
     ob_start(); 
-
-  include( locate_template('template-parts/up.php', false, false ));
-   
+    include( locate_template('template-parts/up.php', false, false ));
     $fragments['div.header-cart'] = ob_get_clean();
-
     return $fragments;
 
 } 
@@ -267,3 +264,15 @@ function misha_remove_my_account_links( $menu_links ){
     return $menu_links;
  
 }
+
+function remove_disabling_update_cart_button_on_cart() {
+    if ( is_cart() ) {
+        echo "<script type='text/javascript'>
+            jQuery(document).ready(function() {
+                jQuery( '.update_cart' ).removeAttr( 'disabled' );
+            });
+        </script>";
+    }
+}
+// Add script to footer
+add_action( 'wp_footer', 'remove_disabling_update_cart_button_on_cart', PHP_INT_MAX );

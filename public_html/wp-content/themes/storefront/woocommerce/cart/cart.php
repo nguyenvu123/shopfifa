@@ -18,6 +18,11 @@
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
+<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(<?= get_field("banner_main","option") ?>);">
+	<h2 class="l-text2 t-center">
+		Giỏ hàng
+	</h2>
+</section>
 <section class="cart bgwhite p-t-70 p-b-100">
 	<div class="container">
 			<!-- Cart item -->
@@ -67,15 +72,18 @@ do_action( 'woocommerce_before_cart' ); ?>
 											), $cart_item_key );
 										?>
 										</div>
-									<?php
-									$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+										<div class="cart-img b-rad-4 o-f-hidden">
+											<?php
+												$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
-									if ( ! $product_permalink ) {
-										echo $thumbnail; // PHPCS: XSS ok.
-									} else {
-										printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
-									}
-									?>
+												if ( ! $product_permalink ) {
+													echo $thumbnail; // PHPCS: XSS ok.
+												} else {
+													printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+												}
+												?>
+										</div>
+									
 									</td>
 
 									<td class="column-2" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
@@ -109,9 +117,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 									<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
 										<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
 									</button>
-
-									<!-- <input class="size8 m-text18 t-center num-product" type="number" name="num-product2" value="1"> -->
-									<?php echo $_product->get_max_purchase_quantity(); ?>
 									<?php
 									if ( $_product->is_sold_individually() ) {
 										$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -150,7 +155,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						<tr>
 							<td colspan="6" class="actions">
-
+							<div class="">
 								<?php if ( wc_coupons_enabled() ) { ?>
 									<div class="coupon">
 										<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?></button>
@@ -158,11 +163,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 									</div>
 								<?php } ?>
 
-								<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+								<button type="submit" class="button update_cart" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 
 								<?php do_action( 'woocommerce_cart_actions' ); ?>
 
 								<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+							</div>
+								
 							</td>
 						</tr>
 
